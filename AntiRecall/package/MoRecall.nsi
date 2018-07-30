@@ -288,7 +288,6 @@ Section Uninstall
   Delete "$INSTDIR\Telerik.Documents.SpreadsheetStreaming.dll"
   Delete "$INSTDIR\socks5.pdb"
   Delete "$INSTDIR\socks5.dll"
-  Delete "$INSTDIR\setting.xml"
   Delete "$INSTDIR\MoRecall.vshost.exe.manifest"
   Delete "$INSTDIR\MoRecall.vshost.exe.config"
   Delete "$INSTDIR\MoRecall.vshost.exe"

@@ -106,11 +106,11 @@ namespace AntiRecall
 
             if (-1 != Xml.antiRElement["QQPath"].IndexOf("QQ.exe"))
             {
-                this.Explorer.Content = "配置读取完成";
+                this.Explorer.Content = "配置已读取";
             }
             if (-1 != Xml.antiRElement["TIMPath"].IndexOf("TIM.exe"))
             {
-                this.Explorer_Copy.Content = "TIM配置读取完成";
+                this.Explorer_Copy.Content = "配置已读取";
             }
         }
         /*
@@ -144,6 +144,7 @@ namespace AntiRecall
                 Xml.antiRElement["PortText_Copy"] = Xml.QueryXml("PortText_Copy");
                 Xml.antiRElement["QQPath"] = Xml.QueryXml("QQPath");
                 Xml.antiRElement["TIMPath"] = Xml.QueryXml("TIMPath");
+                //Xml.antiRElement["NewUser"] = Xml.QueryXml("NewUser");
                 Xml.antiRElement["Mode"] = Xml.QueryXml("Mode");
                 PortText.Text = Xml.antiRElement["PortText"];
                 PortText_Copy.Text = Xml.antiRElement["PortText_Copy"];
@@ -152,10 +153,25 @@ namespace AntiRecall
             {
                 Xml.CreateXml(Xml.antiRElement);
             }
-            ModeCheck();
+           Loaded += MainWindow_Loaded;
+            this.jc.Foreground = System.Windows.Media.Brushes.Black;
+            this.jc.IsEnabled = true;
+            //if (Xml.antiRElement["NewUser"] == "new")
+            //{
             this.Descript_text.Content = "一个不修改文件的防撤回工具";
+           // }
+            //else
+            //{
+            //    this.Descript_text.Content = "你好新用户";
+            //}
+
+            ModeCheck();
         }
 
+        void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+           // Xml.antiRElement["PortText"] = "new";
+        }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
@@ -358,7 +374,7 @@ namespace AntiRecall
         {
             this.Hide();
 
-            ni.BalloonTipTitle = "MoRecall v1.3";
+            ni.BalloonTipTitle = "MoRecall";
             ni.BalloonTipText = "已将MoRecall最小化到托盘,程序将在后台运行";
             ni.BalloonTipIcon = ToolTipIcon.Info;
             ni.ShowBalloonTip(30000);
@@ -398,6 +414,10 @@ namespace AntiRecall
             //App.Current.Shutdown();
         }
 
-
+        private void jc_Click(object sender, RoutedEventArgs e)
+        {
+            var helprecall  = new Window();
+            helprecall.Show();
+        }
     }
 }

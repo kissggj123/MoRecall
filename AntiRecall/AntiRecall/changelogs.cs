@@ -24,8 +24,8 @@ namespace AntiRecall.patch
 
         private void changelogs_Load(object sender, EventArgs e)
         {
-            this.textBox1.Select(0, 0);
-            this.textBox1.Focus();
+           //this.textBox1.Select(0, 0);
+           // this.textBox1.Focus();
         }
 
         void textBox1_GotFocus(object sender, EventArgs e)

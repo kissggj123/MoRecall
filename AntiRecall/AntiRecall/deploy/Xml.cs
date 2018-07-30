@@ -20,8 +20,9 @@ namespace AntiRecall.deploy
             antiRElement.Add("PortText_Copy", "");
             antiRElement.Add("QQPath", "");
             antiRElement.Add("TIMPath", "");
+            //antiRElement.Add("NewUser", "new");
             antiRElement.Add("Mode", "");
-            antiRElement.Add("Descript", "MoRecall v1.3");
+            antiRElement.Add("Descript", "MoRecall v1.3.1");
         }
 
         public static bool CheckXml()
@@ -41,6 +42,8 @@ namespace AntiRecall.deploy
             PortText.InnerText = dict["PortText"];
             XmlElement TIMPath = xmlDoc.CreateElement("TIMPath", dict["TIMPath"]);
             TIMPath.InnerText = dict["TIMPath"];
+            //XmlElement NewUser = xmlDoc.CreateElement("NewUser", dict["NewUser"]);
+            //NewUser.InnerText = dict["NewUser"];
             XmlElement PortText_Copy = xmlDoc.CreateElement("PortText_Copy", dict["PortText_Copy"]);
             PortText_Copy.InnerText = dict["PortText_Copy"];
             XmlElement Mode = xmlDoc.CreateElement("Mode", dict["Mode"]);
@@ -48,6 +51,7 @@ namespace AntiRecall.deploy
             XmlConfig.AppendChild(QQPath);
             XmlConfig.AppendChild(PortText);
             XmlConfig.AppendChild(TIMPath);
+            //XmlConfig.AppendChild(NewUser);
             XmlConfig.AppendChild(PortText_Copy);
             XmlConfig.AppendChild(Mode);
             xmlDoc.Save(System.IO.Directory.GetCurrentDirectory() + @"\setting.xml");

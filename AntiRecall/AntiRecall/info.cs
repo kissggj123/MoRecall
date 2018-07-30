@@ -23,5 +23,10 @@ namespace AntiRecall.patch
             string ver = Application.ProductVersion.ToString();
             label4.Text = "版本@"+ver;   
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            //System.Windows.MessageBox.Show("感谢某只小奶喵的吐槽工具的UI丑陋","美工是不可能美工的这辈子都不可能会美工的");
+        }
     }
 }

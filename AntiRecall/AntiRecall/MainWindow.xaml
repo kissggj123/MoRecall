@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Title="MoRecall防撤回" 
         Height="385.625" 
-        Width="367"
+        Width="418"
         ResizeMode="CanMinimize">
 
     <Window.Resources>
@@ -21,7 +21,7 @@
     </Window.Resources>
 
 
-    <Grid Margin="0,0,4,16"
+    <Grid Margin="3,0,4,9"
           Background="White">
 
 
@@ -29,8 +29,13 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="43" />
-            <ColumnDefinition Width="218"/>
+            <ColumnDefinition Width="11" />
+            <ColumnDefinition Width="137"/>
+            <ColumnDefinition Width="142"/>
+            <ColumnDefinition Width="63"/>
+            <ColumnDefinition Width="47"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
 
         </Grid.ColumnDefinitions>
 
@@ -38,73 +43,87 @@
         <TextBlock Visibility="Visible"
                    Foreground="Gray"
                    Grid.Row="0"
-                   Margin="30,26,110,292"
+                   Margin="10,28,10,290"
                    x:Name="PortItem"
                    FontWeight="Normal"
-                   FontSize="20" RenderTransformOrigin="0.486,0.495" Grid.ColumnSpan="2"><Run Text="QQ"/><Run Text="代理"/><Run Text="端口"/></TextBlock>
+                   FontSize="20" RenderTransformOrigin="0.486,0.495" Grid.Column="1"><Run Text="QQ"/><Run Text="代理"/><Run Text="端口"/></TextBlock>
         <TextBox MinWidth="64"
                  Grid.Row="0"
                  HorizontalAlignment="Center" 
-                 VerticalAlignment="Center" 
                  x:Name="PortText" 
-                 Margin="124,11,31,288" 
+                 Margin="29,13,39,291" 
                  Text="4944"
                  Foreground="Gray"
                  IsReadOnly="True"
-                 FontSize="20" Width="64" Height="44" Grid.Column="1"/>
+                 FontSize="20" Width="74" Height="44" Grid.Column="2" RenderTransformOrigin="-0.453,0.364" VerticalContentAlignment="Stretch" SelectionOpacity="0.5" TextAlignment="Center"/>
 
 
-        <Button Content="配置QQ安装路径" 
+        <Button Content="QQ安装路径" 
                 Foreground="Gray"
                 IsEnabled="False"
                 x:Name="Explorer" 
                 Click="Explorer_Click" 
-                Margin="31,121,0,168" 
-                FontSize="13" BorderBrush="#1E4E7099" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="138"/>
+                Margin="10,128,10,185" 
+                FontSize="13" BorderBrush="#1E4E7099" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="117" VerticalAlignment="Center" Height="35" RenderTransformOrigin="0.673,0.543" ToolTip="关于QQ的配置"/>
 
-        <telerik:RadToggleButton VerticalAlignment="Center" 
+        <telerik:RadToggleButton VerticalAlignment="Top" 
                                         HorizontalAlignment="Center" 
-                                        MinWidth="35" Margin="229,25,-61,299" 
+                                        MinWidth="35" Margin="9,27,38,0" 
                                         IsChecked="False"
                                         Click="StartButton_Click"
                                         x:Name="Start" 
-                                        Style="{StaticResource ToggleSwitchButtonStyle_VS}" Grid.Column="1" />
-        <Button Content="配置TIM安装路径" 
+                                        Style="{StaticResource ToggleSwitchButtonStyle_VS}" Grid.Column="3" Height="19" Width="63" Grid.ColumnSpan="2" />
+        <Button Content="TIM安装路径" 
             Foreground="Gray"
             IsEnabled="False"
             x:Name="Explorer_Copy" 
             Click="Explorer_Copy_Click" 
-            Margin="147,121,-64,168" 
-            FontSize="13" BorderBrush="#1E4E7099" Grid.Column="1"/>
-        <RadioButton Content="内存补丁 " x:Name="Memory_patch_button" Command="{StaticResource patch_memory}" Margin="65,204,12,103" Grid.Column="1"/>
-        <RadioButton Content="代理服务器 " x:Name="Proxy_button" Command="{StaticResource proxy}" Margin="65,237,12,70" Grid.Column="1"/>
-        <Label Content="版本：1.3" HorizontalAlignment="Left" Foreground="Gray" Margin="87,287,0,0" VerticalAlignment="Top" Width="74" Background="White" Grid.Column="1" Height="29"/>
-        <Label Content="开发@北斗家老司机" HorizontalAlignment="Left" Foreground="Gray" Margin="65,308,0,0" VerticalAlignment="Top" Width="124" Background="White" Grid.Column="1" Height="29"/>
-        <Label x:Name="Descript_text" Foreground="Red" Content="Label" Margin="31,187,-62,0" VerticalAlignment="Top" Width="294" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+            Margin="8,128,28,185" 
+            FontSize="13" BorderBrush="#1E4E7099" Grid.Column="2" RenderTransformOrigin="1.147,0.589" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="106" VerticalAlignment="Center" Height="35" ToolTip="关于TIM的配置"/>
+        <RadioButton Content="内存补丁 " x:Name="Memory_patch_button" Command="{StaticResource patch_memory}" Margin="128,217,41,90" Grid.Column="1" RenderTransformOrigin="0.236,0.39" Grid.ColumnSpan="2"/>
+        <RadioButton Content="代理服务器 " x:Name="Proxy_button" Command="{StaticResource proxy}" Margin="127,249,32,58" Grid.Column="1" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <Label Content="版本：1.3.1" HorizontalAlignment="Center" Foreground="Gray" Margin="20,290,48,0" VerticalAlignment="Top" Width="74" Background="White" Grid.Column="2" Height="29" HorizontalContentAlignment="Center"/>
+        <Label Content="开发@北斗家老司机" HorizontalAlignment="Center" Foreground="Gray" Margin="130,319,25,0" VerticalAlignment="Top" Width="124" Background="White" Grid.Column="1" Height="29" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <Label x:Name="Descript_text" Foreground="Red" Content="Label" Margin="10,187,10,0" VerticalAlignment="Top" Width="369" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Height="25" Grid.ColumnSpan="4"/>
         <TextBlock Visibility="Visible"
             Foreground="Gray"
             Grid.Row="0"
-            Margin="30,68,111,250"
+            Margin="10,73,0,245"
             x:Name="PortItem_Copy"
             FontWeight="Normal"
-            FontSize="20" RenderTransformOrigin="0.486,0.495" Grid.ColumnSpan="2"><Run Text="TIM"/><Run Text="代理"/><Run Text="端口"/></TextBlock>
+            FontSize="20" RenderTransformOrigin="0.508,0.593" Grid.Column="1" HorizontalAlignment="Left" Width="127"><Run Text="TIM"/><Run Text="代理"/><Run Text="端口"/></TextBlock>
         <TextBox MinWidth="64"
             Grid.Row="0"
             HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
             x:Name="PortText_Copy" 
-            Margin="124,55,31,246" 
+            Margin="29,62,39,242" 
             Text="4944"
             Foreground="Gray"
             IsReadOnly="True"
-            FontSize="20" Width="64" Height="44" Grid.Column="1"/>
+            FontSize="20" Width="74" Height="44" Grid.Column="2" RenderTransformOrigin="0.516,-0.364" VerticalContentAlignment="Stretch" SelectionOpacity="0.5" TextAlignment="Center"/>
         <telerik:RadToggleButton VerticalAlignment="Center" 
             HorizontalAlignment="Center" 
-            MinWidth="35" Margin="230,69,-59,257" 
+            MinWidth="35" Margin="9,73,39,251" 
             IsChecked="False"
             Click="StartButton_Copy_Click"
             x:Name="Start_Copy" 
-            Style="{StaticResource ToggleSwitchButtonStyle_VS}" Grid.Column="1" />
+            Style="{StaticResource ToggleSwitchButtonStyle_VS}" Grid.Column="3" Width="62" RenderTransformOrigin="0.586,0.542" Height="24" Grid.ColumnSpan="2" >
+            <telerik:RadToggleButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.204"/>
+                    <TranslateTransform X="0.004" Y="-0.019"/>
+                </TransformGroup>
+            </telerik:RadToggleButton.RenderTransform>
+        </telerik:RadToggleButton>
+        <Button Content="配置教程" 
+            Foreground="Gray"
+            IsEnabled="true"
+            x:Name="jc" 
+            Click="jc_Click" 
+            Margin="131,128,12,185" 
+            FontSize="13" BorderBrush="#1E4E7099" Grid.Column="2" RenderTransformOrigin="1.147,0.589" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="109" VerticalAlignment="Center" Height="35" Grid.ColumnSpan="3" ToolTip="关于配置的帮助"/>
 
         <telerik:RadRadialMenu.RadialContextMenu>
             <telerik:RadRadialMenu ShowEventName="MouseEnter"
@@ -151,7 +170,7 @@
                 </telerik:RadRadialMenuItem>
                 <telerik:RadRadialMenuItem Header="关于程序"
                                            CanUserSelect="False">
-                    <telerik:RadRadialMenuItem Header="关于Morecall"
+                    <telerik:RadRadialMenuItem Header="关于MoRecall"
                                                CanUserSelect="False"
                                                Command="{StaticResource showinfo}"
                                                CommandParameter="{Binding RelativeSource={RelativeSource Self}}" />
